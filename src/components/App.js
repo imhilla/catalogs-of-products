@@ -1,25 +1,39 @@
 import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
-import Home from './Home';
-import About from './About';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"; import Products from './Products';
 import '../App.css';
 
 function App() {
   return (
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <Route path="home" component={Home} />
-        <Route path="about" component={About} />
-      </Route>
+    <Router>
       <div>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-        </ul>
-        {/* {this.props.children} */}
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Products</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+          renders the first one that matches the current URL. */}
+        <Switch>
+          {/* <Route path="/about">
+            <About />
+          </Route> */}
+          <Route path="/">
+            <Products />
+          </Route>
+        </Switch>
       </div>
     </Router>
-
   );
 }
 
