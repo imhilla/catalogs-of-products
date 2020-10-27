@@ -6,7 +6,7 @@ import {
   Switch,
   Route,
   Link
-} from "react-router-dom"; import Products from './Products';
+} from "react-router-dom"; import Products from './products';
 import '../App.css';
 
 function App() {
