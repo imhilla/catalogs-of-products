@@ -1,3 +1,20 @@
+import axios from 'axios';
+
+function getData() {
+  axios
+    .all([
+      axios.get('https://pokeapi.co/api/v2/ability/?limit=20&offset=20')
+    ])
+    .then(axios.spread((products) => showOutput(products)))
+    .catch(err => console.error(err));
+}
+
+function showOutput(res) {
+  console.log(res)
+}
+const data = getData();
+// console.log(typeof data)
+
 const initialState = {
   // filter: 'All',
   products: [
@@ -24,22 +41,12 @@ export default products;
 
 
 
-// import axios from 'axios';
 
-// function getData() {
-//   axios
-//     .all([
-//       axios.get('https://pokeapi.co/api/v2/ability/?limit=20&offset=20')
-//     ])
-//     .then(axios.spread((products) => showOutput(products)))
-//     .catch(err => console.error(err));
-// }
+
 
 // getData()
 
-// function showOutput(res) {
-//   console.log(res)
-// }
+
 
 // function products(state = [], action) {
 //   console.log('new')
