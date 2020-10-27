@@ -10,17 +10,14 @@ function getData() {
 }
 
 function showOutput(res) {
-  console.log(res)
+  return res
 }
-const data = getData();
-// console.log(typeof data)
+// const data = getData();
+// console.log(data)
 
 const initialState = {
   // filter: 'All',
-  products: [
-    { id: 1, title: 'Mummies', category: 'Horror' },
-    { id: 2, title: 'The Flash', category: 'Sci-Fi' },
-  ],
+  products: getData()
 };
 
 function products(state = initialState, action) {
