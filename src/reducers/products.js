@@ -1,14 +1,21 @@
 import axios from 'axios';
-const api = axios.create({
-  baseURL: `https://pokeapi.co/api/v2/ability/?limit=20&offset=20`
-})
-const initialState = {
-  products: [{
 
-  }]
+function getData() {
+  axios
+    .all([
+      axios.get('https://pokeapi.co/api/v2/ability/?limit=20&offset=20')
+    ])
+    .then(axios.spread((products) => showOutput(products)))
+    .catch(err => console.error(err));
 }
 
-function products (state= initialState, action){
-console.log('new')
+getData()
+
+function showOutput(res) {
+  console.log(res)
+}
+
+function products(state = [], action) {
+  console.log('new')
 }
 export default products;
