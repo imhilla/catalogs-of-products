@@ -20,11 +20,14 @@ const Products = ({ products }) => {
 
   return (
     <div>
-      <h1>{setTimeout(function () {
-        data.results.forEach(function (pokemon) {
-          fetchPokemonData(pokemon);
+      {/* <h4>{console.log(typeof data)}</h4> */}
+      {
+        Object.entries(data).forEach(([key, value]) => {
+          if (key === 'results') {
+            console.log(key, value);
+          }
         })
-      }, 6000)}</h1>
+      }
     </div>
   )
 }
