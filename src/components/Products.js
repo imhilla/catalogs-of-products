@@ -24,14 +24,6 @@ const Products = ({ products }) => {
   //   changeFilter(filter);
   // };
 
-  function fetchPokemonData(pokemon) {
-    let url = pokemon.url
-    fetch(url)
-      .then(response => response.json())
-      .then(function (pokeData) {
-        console.log(pokeData)
-      })
-  }
 
 
   return (
@@ -40,9 +32,18 @@ const Products = ({ products }) => {
         data.results.forEach(function (pokemon) {
           fetchPokemonData(pokemon);
         })
-      }, 3000)}</h1>
+      }, 4000)}</h1>
     </div>
   )
+}
+
+function fetchPokemonData(pokemon) {
+  let url = pokemon.url
+  fetch(url)
+    .then(response => response.json())
+    .then(function (pokeData) {
+      console.log(pokeData)
+    })
 }
 
 const mapStateToProps = state => ({
