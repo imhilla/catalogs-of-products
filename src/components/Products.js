@@ -12,19 +12,11 @@ const Products = ({ products }) => {
       const result = await axios(
         'https://pokeapi.co/api/v2/pokemon?limit=151',
       );
-      // console.log(result.data)
       setData(result.data);
     };
 
     fetchData();
   }, []);
-
-  // const handleFilterChange = e => {
-  //   const filter = e.target.value;
-  //   changeFilter(filter);
-  // };
-
-
 
   return (
     <div>
@@ -32,7 +24,7 @@ const Products = ({ products }) => {
         data.results.forEach(function (pokemon) {
           fetchPokemonData(pokemon);
         })
-      }, 4000)}</h1>
+      }, 6000)}</h1>
     </div>
   )
 }
@@ -42,8 +34,31 @@ function fetchPokemonData(pokemon) {
   fetch(url)
     .then(response => response.json())
     .then(function (pokeData) {
-      console.log(pokeData)
+      renderPokemon(pokeData)
     })
+}
+
+
+function renderPokemon(pokeData) {
+  return (
+    <div className="pokeContainer">
+      <div className="pokeName">
+        <h4>
+          {pokeData.name}
+        </h4>
+        <p className="pokeNumber">{pokeData.id}</p>
+        <ul className="pokeTypes">
+          {createTypes(pokeData.types)}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+function createTypes(types) {
+  types.forEach(function (type) {
+    <li>{type['type']['name']}</li>
+  })
 }
 
 const mapStateToProps = state => ({
