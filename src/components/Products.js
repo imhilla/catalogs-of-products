@@ -12,9 +12,8 @@ const Products = ({ products }) => {
       const result = await axios(
         'https://pokeapi.co/api/v2/pokemon?limit=151',
       );
-      console.log(products.products)
-
-      setData(result);
+      // console.log(result.data)
+      setData(result.data);
     };
 
     fetchData();
@@ -25,9 +24,23 @@ const Products = ({ products }) => {
   //   changeFilter(filter);
   // };
 
+  function fetchPokemonData(pokemon) {
+    let url = pokemon.url
+    fetch(url)
+      .then(response => response.json())
+      .then(function (pokeData) {
+        console.log(pokeData)
+      })
+  }
+
+
   return (
     <div>
-      <h1>{data.results}</h1>
+      <h1>{setTimeout(function () {
+        data.results.forEach(function (pokemon) {
+          fetchPokemonData(pokemon);
+        })
+      }, 3000)}</h1>
     </div>
   )
 }
