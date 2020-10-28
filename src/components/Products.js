@@ -10,7 +10,7 @@ const Products = ({ products }) => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://pokeapi.co/api/v2/pokemon?limit=151',
+        'https://pokeapi.co/api/v2/pokemon?limit=30',
       );
       setData(result.data);
     };
@@ -24,7 +24,7 @@ const Products = ({ products }) => {
       {
         Object.entries(data).forEach(([key, value]) => {
           if (key === 'results') {
-            console.log(key, value);
+            fetchPokemonData(value);
           }
         })
       }
@@ -32,15 +32,22 @@ const Products = ({ products }) => {
   )
 }
 
-function fetchPokemonData(pokemon) {
-  let url = pokemon.url
-  fetch(url)
-    .then(response => response.json())
-    .then(function (pokeData) {
-      renderPokemon(pokeData)
-    })
-}
+// data.results.forEach(function (pokemon) {
+//   fetchPokemonData(pokemon);
+// })
 
+function fetchPokemonData(pokemon) {
+  // console.log(typeof pokemon)
+  Object.entries(pokemon).forEach(([key, value]) => {
+
+    let url = value.url;
+    fetch(url)
+      .then(response => response.json())
+      .then(function (pokeData) {
+        renderPokemon(pokeData)
+      })
+  })
+}
 
 function renderPokemon(pokeData) {
   return (
