@@ -14,7 +14,7 @@ class Pokemon extends React.Component {
               <h2>{item.id}</h2>
               {
                 item.types.map(type => (
-                  console.log(type[0])
+                  <p>{type['type']['name']}</p>
                 ))
               }
               <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt=""></img>
