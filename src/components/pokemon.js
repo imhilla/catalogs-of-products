@@ -10,14 +10,14 @@ class Pokemon extends React.Component {
         { ourData.map(item => (
           <div>
             <div>
+              <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt=""></img>
               <h2>{item.name}</h2>
-              <h2>{item.id}</h2>
+              <p>#{item.id}</p>
               {
                 item.types.map(type => (
-                  <p>{type['type']['name']}</p>
+                  <li>{type['type']['name']}</li>
                 ))
               }
-              <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt=""></img>
             </div>
           </div>
         ))
