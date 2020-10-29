@@ -1,4 +1,5 @@
 import React from 'react';
+
 class Pokemon extends React.Component {
   render() {
     let ourData = this.props.data.products
@@ -6,13 +7,13 @@ class Pokemon extends React.Component {
     return (
       <div className="pokeContainer">
       <h2>hhcxc</h2>
-        { Object.entries(ourData).forEach(([key, value]) => (
+        { ourData.map(item => (
           <div>
             <div>
-              <h2>{value.name}</h2>
-              <h2>{value.id}</h2>
+              <h2>{item.name}</h2>
+              <h2>{item.id}</h2>
               <h1>Hello wwwww</h1>
-              {console.log(value.id)}
+              {console.log(item)}
             </div>
           </div>
         ))
@@ -22,6 +23,4 @@ class Pokemon extends React.Component {
     );
   }
 }
-
-
-export default Pokemon
+export default Pokemon;
