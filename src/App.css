@@ -37,3 +37,13 @@
   }
 }
 
+.pokeContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+}
+
+.container-div img {
+  width: 100%;
+  height: auto;
+}

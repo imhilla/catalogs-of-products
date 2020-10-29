@@ -6,7 +6,6 @@ import { ReactReduxContext } from 'react-redux'
 import Pokemon from './pokemon';
 
 
-
 const Products = ({ products }) => {
   const [data, setData] = useState({ products });
   useEffect(() => {
