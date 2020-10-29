@@ -3,17 +3,21 @@ import React from 'react';
 class Pokemon extends React.Component {
   render() {
     let ourData = this.props.data.products
-    console.log(ourData)
+    // console.log(ourData)
+    // console.log(ourData.id)
     return (
       <div className="pokeContainer">
-      <h2>hhcxc</h2>
         { ourData.map(item => (
           <div>
             <div>
               <h2>{item.name}</h2>
               <h2>{item.id}</h2>
-              <h1>Hello wwwww</h1>
-              {console.log(item)}
+              {
+                item.types.map(type => (
+                  console.log(type[0])
+                ))
+              }
+              <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt=""></img>
             </div>
           </div>
         ))
