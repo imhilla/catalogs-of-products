@@ -43,6 +43,15 @@
   grid-template-rows: auto;
 }
 
+.container-div {
+  padding: 0.5em;
+}
+
+.img-container {
+  background-color: gray;
+  padding: 0.3em;
+}
+
 .container-div img {
   width: 100%;
   height: auto;

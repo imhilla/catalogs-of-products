@@ -4,12 +4,14 @@ class Pokemon extends React.Component {
   render() {
     let ourData = this.props.data.products
     console.log(ourData)
-    console.log(ourData.id)
+    console.log(ourData)
     return (
       <div className="pokeContainer">
         { ourData.map(item => (
           <div className="container-div">
-            <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt=""></img>
+            <div className="img-container">
+              <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt=""></img>
+            </div>
             <h2>{item.name}</h2>
             <p>#{item.id}</p>
             {
