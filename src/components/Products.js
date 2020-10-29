@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { ReactReduxContext } from 'react-redux'
+import Pokemon from './pokemon';
 
 
 
@@ -12,63 +14,41 @@ const Products = ({ products }) => {
       const result = await axios(
         'https://pokeapi.co/api/v2/pokemon?limit=30',
       );
+      // let productArray = products.products;
+      // console.log(productArray.push(result.data.results))
       setData(result.data);
     };
 
     fetchData();
-  }, []);
+  }, [products.products]);
 
   return (
-    <div>
-      {/* <h4>{console.log(typeof data)}</h4> */}
-      {
+    <ReactReduxContext.Consumer>
+      {({ store }) => {
+        let nowState = store.getState()
+        let productArr = nowState.products.products
         Object.entries(data).forEach(([key, value]) => {
           if (key === 'results') {
-            fetchPokemonData(value);
+            Object.entries(value).forEach(([key, value]) => {
+              let url = value.url;
+              fetch(url)
+                .then(response => response.json())
+                .then(function (pokeData) {
+                  productArr.push(pokeData)
+                })
+            })
           }
         })
-      }
-    </div>
+        let myPokeData = store.getState();
+        let newPoke = myPokeData.products;
+        // do something useful with the store, like passing it to a child
+        // component where it can be used in lifecycle methods
+        return <div>
+          <Pokemon data={newPoke} />
+        </div>
+      }}
+    </ReactReduxContext.Consumer>
   )
-}
-
-// data.results.forEach(function (pokemon) {
-//   fetchPokemonData(pokemon);
-// })
-
-function fetchPokemonData(pokemon) {
-  // console.log(typeof pokemon)
-  Object.entries(pokemon).forEach(([key, value]) => {
-
-    let url = value.url;
-    fetch(url)
-      .then(response => response.json())
-      .then(function (pokeData) {
-        renderPokemon(pokeData)
-      })
-  })
-}
-
-function renderPokemon(pokeData) {
-  return (
-    <div className="pokeContainer">
-      <div className="pokeName">
-        <h4>
-          {pokeData.name}
-        </h4>
-        <p className="pokeNumber">{pokeData.id}</p>
-        <ul className="pokeTypes">
-          {createTypes(pokeData.types)}
-        </ul>
-      </div>
-    </div>
-  )
-}
-
-function createTypes(types) {
-  types.forEach(function (type) {
-    <li>{type['type']['name']}</li>
-  })
 }
 
 const mapStateToProps = state => ({
