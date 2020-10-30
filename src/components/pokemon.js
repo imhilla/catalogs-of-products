@@ -3,8 +3,6 @@ import React from 'react';
 class Pokemon extends React.Component {
   render() {
     let ourData = this.props.data.products
-    console.log(ourData)
-    console.log(ourData.id)
     return (
       <div className="pokeContainer">
         { ourData.map(item => (

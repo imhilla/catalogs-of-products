@@ -11,7 +11,7 @@ const Products = ({ products }) => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://pokeapi.co/api/v2/pokemon?limit=30',
+        'https://pokeapi.co/api/v2/pokemon?limit=100',
       );
       // let productArray = products.products;
       // console.log(productArray.push(result.data.results))
