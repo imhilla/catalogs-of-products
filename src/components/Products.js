@@ -42,9 +42,9 @@ const Products = ({ products }) => {
         let newPoke = myPokeData.products;
         // do something useful with the store, like passing it to a child
         // component where it can be used in lifecycle methods
-        return <div>
+        return (<div>
           <Pokemon data={newPoke} />
-        </div>
+        </div>)
       }}
     </ReactReduxContext.Consumer>
   )

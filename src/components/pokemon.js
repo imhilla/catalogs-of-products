@@ -1,8 +1,21 @@
 import React from 'react';
 
 class Pokemon extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { favoritecolor: "red" };
+    // console.log(this.state)
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ products: this.state })
+    }, 2000)
+  }
   render() {
+    console.log(this.state.products)
     let ourData = this.props.data.products
+    // console.log(ourData)
     return (
       <div className="pokeContainer">
         { ourData.map(item => (
