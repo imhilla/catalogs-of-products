@@ -4,9 +4,17 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { ReactReduxContext } from 'react-redux'
 import Pokemon from './pokemon';
+import categoryFilter from './categoryFilter';
+import { changeFilter } from '../actions';
 
 
-const Products = ({ products }) => {
+
+const Products = ({ products, changeFilter }) => {
+  const handleFilterChange = e => {
+    const filter = e.target.value;
+    changeFilter(filter);
+  };
+
   const [data, setData] = useState({ products });
   useEffect(() => {
     const fetchData = async () => {
