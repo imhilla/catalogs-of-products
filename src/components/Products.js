@@ -12,10 +12,17 @@ import { changeFilter } from '../actions/index';
 const Products = ({ products, category, changeFilter }) => {
   const handleFilterChange = e => {
     const filter = e.target.value;
+    console.log('broo')
     changeFilter(filter);
   };
-  // const filtered = category === 'All' ? books : books.filter(book => book.category === category);
-
+  // const filtered = category === 'All' ? products : products.filter(product => product.category === category);
+  
+  // eachProduct.map(item => {
+  //   if (item.type['type']['name'] === 'electric') {
+  //     console.log(item)
+  //   }
+  //   // return 'true'
+  // })
   const [data, setData] = useState({ products });
   useEffect(() => {
     const fetchData = async () => {
@@ -56,6 +63,7 @@ const Products = ({ products, category, changeFilter }) => {
             filter={category}
             handleFilterChange={handleFilterChange}
           />
+          {console.log(newPoke)}
           <Pokemon data={newPoke} />
         </div>)
       }}

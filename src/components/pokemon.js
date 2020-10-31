@@ -9,7 +9,7 @@ class Pokemon extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ products: this.state })
-    }, 2000)
+    }, 5000)
   }
 
   render() {
