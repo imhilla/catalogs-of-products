@@ -4,16 +4,17 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { ReactReduxContext } from 'react-redux'
 import Pokemon from './pokemon';
-import categoryFilter from './categoryFilter';
-import { changeFilter } from '../actions';
+import CategoryFilter from './categoryFilter';
+import { changeFilter } from '../actions/index';
 
 
 
-const Products = ({ products, changeFilter }) => {
+const Products = ({ products, category, changeFilter }) => {
   const handleFilterChange = e => {
     const filter = e.target.value;
     changeFilter(filter);
   };
+  // const filtered = category === 'All' ? books : books.filter(book => book.category === category);
 
   const [data, setData] = useState({ products });
   useEffect(() => {
@@ -51,6 +52,10 @@ const Products = ({ products, changeFilter }) => {
         // do something useful with the store, like passing it to a child
         // component where it can be used in lifecycle methods
         return (<div>
+          <CategoryFilter
+            filter={category}
+            handleFilterChange={handleFilterChange}
+          />
           <Pokemon data={newPoke} />
         </div>)
       }}
@@ -62,9 +67,9 @@ const mapStateToProps = state => ({
   products: state.products,
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   changeFilter: category => dispatch(changeFilter(category)),
-// });
+const mapDispatchToProps = dispatch => ({
+  changeFilter: category => dispatch(changeFilter(category)),
+});
 
 
-export default connect(mapStateToProps)(Products);
+export default connect(mapStateToProps, mapDispatchToProps)(Products);

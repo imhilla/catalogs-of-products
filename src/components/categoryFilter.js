@@ -6,7 +6,7 @@ const renderCategories = categories.map(item => (
   <option key={uuidv4()} value={item}>{item}</option>
 ));
 
-const categoryFilter = ({ filter = 'All', handleFilterChange }) => (
+const CategoryFilter = ({ filter = 'All', handleFilterChange }) => (
   <div className="panel-bg">
     <div className="second-panel">
       <div className="categories">
@@ -23,4 +23,4 @@ const categoryFilter = ({ filter = 'All', handleFilterChange }) => (
   </div>
 );
 
-export default categoryFilter;
+export default CategoryFilter;

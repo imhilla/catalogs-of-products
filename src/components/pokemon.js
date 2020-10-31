@@ -3,7 +3,7 @@ import React from 'react';
 class Pokemon extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { favoritecolor: "red" };
+    this.state = { pokemons: "empty" };
   }
 
   componentDidMount() {
@@ -11,6 +11,7 @@ class Pokemon extends React.Component {
       this.setState({ products: this.state })
     }, 2000)
   }
+
   render() {
     let ourData = this.props.data.products
     return (
