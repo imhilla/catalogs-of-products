@@ -15,8 +15,9 @@ const Products = ({ products, category, changeFilter }) => {
     console.log('broo')
     changeFilter(filter);
   };
+  console.log(category)
   // const filtered = category === 'All' ? products : products.filter(product => product.category === category);
-  
+
   // eachProduct.map(item => {
   //   if (item.type['type']['name'] === 'electric') {
   //     console.log(item)
@@ -56,6 +57,12 @@ const Products = ({ products, category, changeFilter }) => {
         })
         let myPokeData = store.getState();
         let newPoke = myPokeData.products;
+        {/* const filtered = category === 'All' ? newPoke : products.filter(product => product.category === category); */ }
+        let filtered
+        if (category === "grass") {
+          filtered = newPoke
+          console.log(filtered)
+        }
         // do something useful with the store, like passing it to a child
         // component where it can be used in lifecycle methods
         return (<div>
@@ -73,6 +80,7 @@ const Products = ({ products, category, changeFilter }) => {
 
 const mapStateToProps = state => ({
   products: state.products,
+  category: state.products.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
