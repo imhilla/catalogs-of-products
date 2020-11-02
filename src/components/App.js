@@ -8,7 +8,9 @@ import {
   Link
 } from "react-router-dom";
 import Products from './Products';
+import PokemonView from './PokemonView'
 import '../App.css';
+import Pokemon from './pokemon';
 
 function App() {
 
