@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const categories = ["CATEGORIES", 'poison', 'fire', 'water', 'bug', 'normal', 'electric', 'ground', 'grass', 'psychic', 'rock', 'fighting'];
+const categories = ["CATEGORIES", 'poison', 'fire', 'flying', 'water', 'bug', 'normal', 'electric', 'ground', 'grass', 'psychic', 'rock', 'fighting'];
 const renderCategories = categories.map(item => (
   <option key={uuidv4()} value={item}>{item}</option>
 ));

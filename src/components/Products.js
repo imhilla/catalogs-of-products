@@ -29,7 +29,6 @@ const Products = ({ products, category, changeFilter }) => {
       {({ store }) => {
         let nowState = store.getState()
         let productArr = nowState.products.products
-        console.log(productArr.length)
         Object.entries(data).forEach(([key, value]) => {
           if (key === 'results') {
             Object.entries(value).forEach(([key, value]) => {
