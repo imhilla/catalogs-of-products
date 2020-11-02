@@ -16,7 +16,7 @@ const Products = ({ products, category, changeFilter }) => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://pokeapi.co/api/v2/pokemon?limit=100',
+        'https://pokeapi.co/api/v2/pokemon?limit=50',
       );
       setData(result.data);
     };
@@ -36,7 +36,7 @@ const Products = ({ products, category, changeFilter }) => {
               fetch(url)
                 .then(response => response.json())
                 .then(function (pokeData) {
-                  if (productArr.length < 100) {
+                  if (productArr.length < 50) {
                     productArr.push(pokeData)
                   }
                 })

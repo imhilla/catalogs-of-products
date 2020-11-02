@@ -13,8 +13,10 @@ class Pokemon extends React.Component {
     if (showArray < 1) {
       showArray.push(this.state.products[item.id - 1])
     }
-    //   state: { itemDetails: item }
-    console.log(showArray)
+    this.props.data.products = showArray
+    console.log(this.props.data.products)
+
+    this.setState({ products: this.props.data.products })
   }
 
   componentDidMount() {
