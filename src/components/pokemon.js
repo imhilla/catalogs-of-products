@@ -22,7 +22,7 @@ class Pokemon extends React.Component {
           console.log(item)
           myNewData.push(item)
           console.log(category)
-        } else if (category === 'All') {
+        } else if (category === 'All' || category === 'CATEGORIES') {
           myNewData = ourData
         }
       })
