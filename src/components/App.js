@@ -7,7 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Products from './products';
+import Products from './Products';
 import '../App.css';
 
 function App() {

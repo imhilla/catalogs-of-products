@@ -28,7 +28,7 @@ const Products = ({ products, category, changeFilter }) => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://pokeapi.co/api/v2/pokemon?limit=100',
+        'https://pokeapi.co/api/v2/pokemon?limit=50',
       );
       // let productArray = products.products;
       // console.log(productArray.push(result.data.results))
@@ -36,7 +36,7 @@ const Products = ({ products, category, changeFilter }) => {
     };
 
     fetchData();
-  }, [products.products]);
+  }, []);
 
   return (
     <ReactReduxContext.Consumer>
