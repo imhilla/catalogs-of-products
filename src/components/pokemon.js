@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,  BrowserRouter } from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 
 class Pokemon extends React.Component {
   constructor(props) {
@@ -8,11 +8,13 @@ class Pokemon extends React.Component {
   }
 
   handleClick(item) {
-    // BrowserRouter.push({
-    //   pathname: "pokemon/" + item.id,
+    console.log(item.id)
+    let showArray = []
+    if (showArray < 1) {
+      showArray.push(this.state.products[item.id - 1])
+    }
     //   state: { itemDetails: item }
-    // });
-    console.log('yess')
+    console.log(showArray)
   }
 
   componentDidMount() {
@@ -39,7 +41,7 @@ class Pokemon extends React.Component {
         { myNewData.map(item => (
           <div className="container-div">
             <div className="img-container">
-              <Link  to={`/pokemon/${item.id}`} onClick={this.handleClick.bind(this, item)}>
+              <Link to={`/pokemon/${item.id}`} onClick={() => this.handleClick(item)}>
                 <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt=""></img>
               </Link>
             </div>
