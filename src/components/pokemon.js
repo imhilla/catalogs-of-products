@@ -14,9 +14,22 @@ class Pokemon extends React.Component {
 
   render() {
     let ourData = this.props.data.products
+    let category = this.props.filter
+    let myNewData = [];
+    ourData.map((item) => {
+      item.types.map((type) => {
+        if (type['type']['name'] === category) {
+          console.log(item)
+          myNewData.push(item)
+          console.log(category)
+        } else if (category === 'All') {
+          myNewData = ourData
+        }
+      })
+    })
     return (
       <div className="pokeContainer">
-        { ourData.map(item => (
+        { myNewData.map(item => (
           <div className="container-div">
             <div className="img-container">
               <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt=""></img>

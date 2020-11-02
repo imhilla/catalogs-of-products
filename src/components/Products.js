@@ -12,10 +12,10 @@ import { changeFilter } from '../actions/index';
 const Products = ({ products, category, changeFilter }) => {
   const handleFilterChange = e => {
     const filter = e.target.value;
-    console.log('broo')
+    // console.log('broo')
     changeFilter(filter);
   };
-  console.log(category)
+  // console.log(category)
   // const filtered = category === 'All' ? products : products.filter(product => product.category === category);
 
   // eachProduct.map(item => {
@@ -59,10 +59,7 @@ const Products = ({ products, category, changeFilter }) => {
         let newPoke = myPokeData.products;
         {/* const filtered = category === 'All' ? newPoke : products.filter(product => product.category === category); */ }
         let filtered
-        if (category === "grass") {
-          filtered = newPoke
-          console.log(filtered)
-        }
+       
         // do something useful with the store, like passing it to a child
         // component where it can be used in lifecycle methods
         return (<div>
@@ -71,7 +68,7 @@ const Products = ({ products, category, changeFilter }) => {
             handleFilterChange={handleFilterChange}
           />
           {console.log(newPoke)}
-          <Pokemon data={newPoke} />
+          <Pokemon data={newPoke} filter={category}/>
         </div>)
       }}
     </ReactReduxContext.Consumer>
