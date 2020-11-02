@@ -8,8 +8,8 @@ class Pokemon extends React.Component {
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ products: this.state })
-    }, 5000)
+      this.setState({ products: this.props.data.products })
+    }, 3000)
   }
 
   render() {
@@ -19,9 +19,7 @@ class Pokemon extends React.Component {
     ourData.map((item) => {
       item.types.map((type) => {
         if (type['type']['name'] === category) {
-          console.log(item)
           myNewData.push(item)
-          console.log(category)
         } else if (category === 'All' || category === 'CATEGORIES') {
           myNewData = ourData
         }
