@@ -6,6 +6,7 @@ import { ReactReduxContext } from 'react-redux'
 import Pokemon from './pokemon';
 import CategoryFilter from './categoryFilter';
 import { changeFilter } from '../actions/index';
+import { v4 as uuidv4 } from 'uuid';
 
 const Products = ({ products, category, changeFilter }) => {
   const handleFilterChange = e => {
@@ -50,7 +51,7 @@ const Products = ({ products, category, changeFilter }) => {
             filter={category}
             handleFilterChange={handleFilterChange}
           />
-          <Pokemon data={newPoke} filter={category} />
+          <Pokemon data={newPoke} filter={category} key={uuidv4()} />
         </div>)
       }}
     </ReactReduxContext.Consumer>

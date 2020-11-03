@@ -21,3 +21,7 @@
 .item-name {
   font-size: 18px;
 }
+
+.dnone{ 
+  display: grid;
+}

@@ -22,9 +22,7 @@ function App() {
             <li>
               <Link to="/">Products</Link>
             </li>
-            <li>
-              <Link to="/categories">Categories</Link>
-            </li>
+
           </ul>
         </nav>
 
@@ -32,7 +30,6 @@ function App() {
           <Route path="/">
             <Products />
           </Route>
-          <Route path="/pokemon/:id" component={PokemonView}/>
         </Switch>
       </div>
     </Router>

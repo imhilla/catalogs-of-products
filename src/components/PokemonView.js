@@ -1,33 +1,29 @@
-import React from 'react';
+import React from "react";
+import { useParams } from "react-router-dom";
 
-class PokemonView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ID: props.match.params.id,
-    };
-  }
-  // componentDidMount() {
-  //   console.log(this.props)
-  //   // const { fetchOneMission } = this.props;
-  //   // const { ID } = this.state;
-  //   // fetchOneMission(ID);
-  // }
+const PokemonView = ({ data }) => {
+  const { productId } = useParams();
+  console.log(data)
+  // const product = data.find(p => p.id === Number(productId));
+  // let productData;
 
-  render() {
-    return (
-      <div className="Question">
-        <p>i am here</p>
-      </div>
-    )
-  }
-}
-// const PokemonView = ({ match }) => {
-//   let id = match.params;
-//   console.log('here')
-//   return (
+  // if (product) {
+  //   productData = (
+  //     <div>
+  //       <h3> {product.name} </h3>
+  //       <p>{product.description}</p>
+  //       <hr />
+  //       <h4>{product.status}</h4>
+  //     </div>
+  //   );
+  // } 
 
-//   )
-// };
+  return (
+    <div>
+      {/* <div>{productData}</div> */}
+      <div>Hello world</div>
+    </div>
+  );
+};
 
 export default PokemonView;

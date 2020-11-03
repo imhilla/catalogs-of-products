@@ -16,6 +16,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "redux": "^4.0.5",
+    "use-state-if-mounted": "^1.0.4",
     "uuidv4": "^6.2.4",
     "web-vitals": "^0.2.4"
   },
