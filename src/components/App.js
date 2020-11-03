@@ -24,10 +24,10 @@ function App() {
             </li>
           </ul>
         </nav>
-        <Route path="/">
-          <Products />
-        </Route>
-        <Route path="/pokemon/:pokemon_id" component={PokemonView} />
+        <Switch>
+          <Route path="/" exact component={Products} />
+          <Route path="/pokemon/:pokemon_id" component={PokemonView} />
+        </Switch>
       </div>
     </Router>
   );
