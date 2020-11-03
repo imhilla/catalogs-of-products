@@ -32,6 +32,7 @@ function App() {
           <Route path="/">
             <Products />
           </Route>
+          <Route path="/pokemon/:id" component={PokemonView}/>
         </Switch>
       </div>
     </Router>
