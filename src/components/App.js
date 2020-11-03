@@ -22,15 +22,12 @@ function App() {
             <li>
               <Link to="/">Products</Link>
             </li>
-
           </ul>
         </nav>
-
-        <Switch>
-          <Route path="/">
-            <Products />
-          </Route>
-        </Switch>
+        <Route path="/">
+          <Products />
+        </Route>
+        <Route path="/pokemon/:pokemon_id" component={PokemonView} />
       </div>
     </Router>
   );

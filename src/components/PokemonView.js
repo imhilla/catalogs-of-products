@@ -1,29 +1,24 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
-const PokemonView = ({ data }) => {
-  const { productId } = useParams();
-  console.log(data)
-  // const product = data.find(p => p.id === Number(productId));
-  // let productData;
+class PokemonView extends React.Component {
+  state = {
+    id: null
+  }
+  componentDidMount() {
+    let id = this.props.match.params.pokemon_id
+    this.setState({
+      id: id
+    })
+  }
 
-  // if (product) {
-  //   productData = (
-  //     <div>
-  //       <h3> {product.name} </h3>
-  //       <p>{product.description}</p>
-  //       <hr />
-  //       <h4>{product.status}</h4>
-  //     </div>
-  //   );
-  // } 
-
-  return (
-    <div>
-      {/* <div>{productData}</div> */}
-      <div>Hello world</div>
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        {/* <div>{productData}</div> */}
+        <div>{this.state.id}</div>
+      </div>
+    );
+  }
 };
 
 export default PokemonView;

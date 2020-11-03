@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route } from "react-router-dom";
-import PokemonView from './PokemonView'
+// import PokemonView from './PokemonView'
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -8,26 +8,16 @@ class Pokemon extends React.Component {
   constructor(props) {
     super(props);
     this.state = { pokemons: "empty" };
-    this.handleClick = this.handleClick.bind(this);
     this.state = { clicked: false }
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ products: this.props.data.products })
-    }, 3000)
-  }
-
-  handleClick() {
-    console.log('yes')
-    this.setState({ clicked: true })
-  }
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.setState({ products: this.props.data.products })
+  //   }, 3000)
+  // }
 
   render() {
-    const mystyles = {
-      inputNormal: { display: 'none' },
-      inputClicked: { color: 'grid' }
-    }
     let ourData = this.props.data.products
     let category = this.props.filter
     let myNewData = [];
@@ -42,12 +32,12 @@ class Pokemon extends React.Component {
     })
     return (
       <div>
-        <div className="pokeContainer" style={this.state.clicked ? mystyles.inputNormal : mystyles.inputClicked}
+        <div className="pokeContainer"
         >
           {myNewData.map((item, index) => (
             <div className="container-div" key={index}>
               <div className="img-container">
-                <Link to={`/pokemon/${item.id}`} onClick={this.handleClick}>
+                <Link to={`/pokemon/${item.id}`}>
                   <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt="" />
                 </Link>
               </div>
@@ -61,9 +51,6 @@ class Pokemon extends React.Component {
             </div>
           ))
           }</div>
-        <Route path={`/pokemon/:pokemonId`}>
-          <PokemonView data={myNewData} key={uuidv4()} />
-        </Route>
       </div>
     );
   }
