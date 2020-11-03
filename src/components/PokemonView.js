@@ -14,7 +14,6 @@ class PokemonView extends React.Component {
   render() {
     return (
       <div>
-        {/* <div>{productData}</div> */}
         <div>{this.state.id}</div>
       </div>
     );
