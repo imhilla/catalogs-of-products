@@ -1,19 +1,27 @@
 import React from 'react';
 import { Link, Route } from "react-router-dom";
-// import PokemonView from './PokemonView'
 import { v4 as uuidv4 } from 'uuid';
 
 class Pokemon extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { pokemons: "empty" };
+    this.state = {
+      render: false
+    }
+    this._isMounted = false;
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ pokemons: this.props.data.products })
-    }, 2000)
+    setTimeout(function () { 
+      this.setState({ render: true })
+    }.bind(this), 3000)
+    this._isMounted = true;
   }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
 
   render() {
     let ourData = this.props.data.products
@@ -51,10 +59,14 @@ class Pokemon extends React.Component {
         <div>No pokemons yet</div>
       )
 
+    let renderContainer = false //By default don't render anything
+    if (this.state.render) { //If this.state.render == true, which is set to true by the timer.
+      console.log('wait')
+    }
+
     return (
       <div>
         {PokemonList}
-        <div>Loading.......</div>
       </div>
     );
   }
