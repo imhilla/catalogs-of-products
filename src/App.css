@@ -25,3 +25,7 @@
 .dnone{ 
   display: grid;
 }
+
+.single-img img {
+  width: 100px;
+}
