@@ -35,3 +35,13 @@
   flex-direction: row;
   justify-content: center;
 }
+
+.randContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.random {
+  height: 100px;
+  width: 100px;
+}

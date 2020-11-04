@@ -45,7 +45,7 @@ class PokemonView extends React.Component {
 
     return (
       <div className="poke-container">
-        {singlePoke}
+        {/* {singlePoke} */}
         <div>
           <Random data={this.state.data} />
         </div>

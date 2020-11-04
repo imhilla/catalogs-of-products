@@ -19,21 +19,13 @@ class Random extends React.Component {
   }
 
   render() {
-    const fourPokes = this.state.random !== 4 ? (
-      <div>
-        {
-          this.props.data.map(item => {
-            this.state.random.map(num => {
-              if (item.url === `https://pokeapi.co/api/v2/pokemon/${num}/`) {
-                <div>
-                  <h2>Hello</h2>
-                  {/* <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt="" /> */}
-                </div>
-              }
-            })
-          })
-        }
-      </div>
+    const fourPokes = this.state.random ? (
+      <div className="randContainer">{
+        this.state.random.map(num => {
+          return (
+            <img src={`https://pokeres.bastionbot.org/images/pokemon/${num}.png`} alt="" className="random" />
+          )
+        })}</div>
     ) : (<div>Hello</div>);
 
     return (
