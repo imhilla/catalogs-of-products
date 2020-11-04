@@ -1,6 +1,6 @@
 import React from "react";
 
-class Random extends React.Component {
+class NewProducts extends React.Component {
   constructor(props) {
     super(props)
     this.state = { random: [], }
@@ -9,7 +9,7 @@ class Random extends React.Component {
   componentDidMount() {
     const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     let empty = []
-    let four = [1, 2, 3, 4]
+    let four = [1, 2, 3, 4, 5, 6, 7, 8]
     four.map(item => {
       let number = randomInteger(0, 50)
       empty.push(number)
@@ -19,20 +19,22 @@ class Random extends React.Component {
 
   render() {
     const fourPokes = this.state.random ? (
-      <div className="randContainer">{
-        this.state.random.map(num => {
-          return (
-            <img src={`https://pokeres.bastionbot.org/images/pokemon/${num}.png`} alt="" className="random" />
-          )
-        })}</div>
+      <div className="newArrival">
+        {
+          this.state.random.map(num => {
+            return (
+              <img src={`https://pokeres.bastionbot.org/images/pokemon/${num}.png`} alt="" className="random" />
+            )
+          })}</div>
     ) : (<div>Hello</div>);
 
     return (
       <div>
+        <h2 className="new">NEW ARRIVALS</h2>
         {fourPokes}
       </div>
     );
   }
 };
 
-export default Random;
+export default NewProducts;

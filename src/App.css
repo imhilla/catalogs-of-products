@@ -1,35 +1,25 @@
 .pokeContainer {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
 }
 
-.container-div {
-  padding: 0.5em;
-}
-
-.img-container {
-  background-color: gray;
-  padding: 0.3em;
-}
-
-.container-div img {
-  width: 100%;
+.img-container img {
   height: auto;
+  width: 200px;
+  border: 1px solid gray;
+}
+
+.pokelist {
+  margin: 3em;
+  padding: 3em;
 }
 
 .item-name {
-  font-size: 18px;
-}
-
-.dnone {
-  display: grid;
-}
-
-.single-img img {
-  width: 430px;
-  border: 1px solid rgb(190, 188, 188);
-  margin: 0.3em 1em;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1em 0;
 }
 
 .poke-container {
@@ -91,4 +81,29 @@
 
 .lastContainer p {
   padding: 0.5em;
+}
+
+.newContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.newArrival {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+}
+
+.newArrival img {
+  width: 190px;
+  height: auto;
+}
+
+.new {
+  font-weight: bold;
+}
+
+.single-img img {
+  max-width: 400px;
+  max-height: 500px;
 }

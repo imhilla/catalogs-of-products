@@ -12,7 +12,7 @@ class Pokemon extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(function () { 
+    setTimeout(function () {
       this.setState({ render: true })
     }.bind(this), 3000)
     this._isMounted = true;
@@ -41,16 +41,17 @@ class Pokemon extends React.Component {
       <div className="pokeContainer">
         {myNewData.map((item, index) => (
           <div className="container-div" key={index}>
+            <h2 className="item-name">{item.name}</h2>
             <div className="img-container">
               <Link to={`/pokemon/${item.id}`}>
                 <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} alt="" />
               </Link>
             </div>
-            <h2 className="item-name">{item.name}</h2>
-            <p>#{item.id}</p>
             {
               item.types.map(type => (
-                <li>{type['type']['name']}</li>
+                <div>
+                  <li>{type['type']['name']}</li>
+                </div>
               ))
             }
           </div>
@@ -65,7 +66,7 @@ class Pokemon extends React.Component {
     }
 
     return (
-      <div>
+      <div className="pokelist">
         {PokemonList}
       </div>
     );
