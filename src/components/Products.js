@@ -7,8 +7,6 @@ import Pokemon from './pokemon';
 import CategoryFilter from './categoryFilter';
 import { changeFilter } from '../actions/index';
 import { v4 as uuidv4 } from 'uuid';
-import { Link } from "react-router-dom";
-// import cart from '../img/cart.png'
 
 const Products = ({ products, category, changeFilter }) => {
   const handleFilterChange = e => {
