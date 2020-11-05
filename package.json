@@ -17,6 +17,7 @@
     "react-scripts": "4.0.0",
     "redux": "^4.0.5",
     "use-state-if-mounted": "^1.0.4",
+    "uuid": "^8.3.1",
     "uuidv4": "^6.2.4",
     "web-vitals": "^0.2.4"
   },
