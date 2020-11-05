@@ -1,20 +1,26 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import Random from './Random';
 import NewProducts from './NewProducts';
 
 class PokemonView extends React.Component {
+  // eslint-disable-next-line react/state-in-constructor
   state = {
     id: null,
     random: [],
   }
 
   componentDidMount() {
-    const id = this.props.match.params.pokemon_id;
+    const { match } = this.props;
+    const { params } = match;
+    const id = params.pokemon_id;
     const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     const empty = [];
     const four = [1, 2, 3, 4];
+    // eslint-disable-next-line array-callback-return
     four.map(item => {
+      console.log(item);
       const number = randomInteger(0, 50);
       empty.push(number);
       this.setState({ random: empty });
@@ -26,29 +32,32 @@ class PokemonView extends React.Component {
     this.setState({
       id,
     });
+    console.log(pokeData);
   }
 
   render() {
+    const { data } = this.state;
+    const { random } = this.state;
+    const { id } = this.state;
     const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-    const singlePoke = this.state.data !== undefined && this.state.random.length !== undefined ? (
+    const singlePoke = data !== undefined && random.length !== undefined ? (
       <div>
         <div className="single-img">
-          <img src={`https://pokeres.bastionbot.org/images/pokemon/${this.state.id}.png`} alt="" />
+          <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt="" />
         </div>
 
       </div>
-    ) : (
-      <div>Loading...</div>);
-    const Description = this.state.data !== undefined && this.state.random.length !== undefined ? (
+    ) : (<div>Loading...</div>);
+    const Description = data !== undefined && random.length !== undefined ? (
       <div>
-        {this.state.data.map(item => {
-          if (item.url === `https://pokeapi.co/api/v2/pokemon/${this.state.id}/`) {
+        {data.map(item => {
+          if (item.url === `https://pokeapi.co/api/v2/pokemon/${id}/`) {
             return (
               <div>
                 <div className="description">
                   <h2>{item.name}</h2>
                   <p>
-                    You'll get Pikachu wearing some of Ash's caps from throughout
+                    You`&apos;`ll get Pikachu wearing some of Ash`&apos;`s caps from throughout
                     the animated series, ranging from his classic chapeau from when he first
                     set out on his Pokémon adventure to more recent designs—like those seen in
                     the film Pokémon the Movie
@@ -66,17 +75,17 @@ class PokemonView extends React.Component {
                         {randomInteger(0, 5)}
                       </p>
                       <i className="fas fa-shopping-cart" />
-                      <button>ADD TO CART</button>
+                      <button type="button">ADD TO CART</button>
                     </div>
                   </div>
                   <div className="lastContainer">
                     <p>
                       You do not need to have purchased the Pokémon Sword Expansion Pass or
-                      Pokémon Shield Expansion Pass to claim any of these forms of Ash's Pikachu,
+                      Pokémon Shield Expansion Pass to claim any of these forms of Ash`&apos;`s
+                      Pikachu,
                       and you can receive each of these forms only once in a single save file.
-                      Also, please note that Ash's Pikachu cannot evolve. Likewise,
-                      Ash's Pikachu cannot be fed Max Soup, which is featured in
-                      The Isle of Armor (part one of the Pokémon Sword and Pokémon Shield Expansion Pass).
+                      Also, please note that Ash`&apos;`s Pikachu cannot evolve. Likewise,
+                      Ash`&apos;`s Pikachu cannot be fed Max Soup, which is featured in
                     </p>
                   </div>
                 </div>
@@ -84,17 +93,17 @@ class PokemonView extends React.Component {
               </div>
             );
           }
+          return 'empty';
         })}
       </div>
-    ) : (
-      <div />);
+    ) : (<div />);
 
     return (
       <div className="allContainer">
         <div className="poke-container">
           {singlePoke}
           <div>
-            <Random data={this.state.data} />
+            <Random data={data} />
           </div>
           <div>{Description}</div>
         </div>
@@ -106,5 +115,13 @@ class PokemonView extends React.Component {
     );
   }
 }
+
+PokemonView.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      pokemon_id: PropTypes.node,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default PokemonView;

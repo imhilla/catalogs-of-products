@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import { v4 as uuidv4 } from 'uuid';
 import Pokemon from './pokemon';
@@ -31,7 +32,7 @@ const Products = ({ products, category, changeFilter }) => {
         const productArr = nowState.products.products;
         Object.entries(data).forEach(([key, value]) => {
           if (key === 'results') {
-            Object.entries(value).forEach(([key, value]) => {
+            Object.entries(value).forEach(([, value]) => {
               const { url } = value;
               fetch(url)
                 .then(response => response.json())
@@ -60,6 +61,18 @@ const Products = ({ products, category, changeFilter }) => {
       }}
     </ReactReduxContext.Consumer>
   );
+};
+
+Products.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.any),
+  changeFilter: PropTypes.func,
+  category: PropTypes.string,
+};
+
+Products.defaultProps = {
+  products: [],
+  changeFilter: () => { },
+  category: 'All',
 };
 
 const mapStateToProps = state => ({

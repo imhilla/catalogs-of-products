@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 class Random extends React.Component {
   constructor(props) {
@@ -11,20 +12,23 @@ class Random extends React.Component {
     const empty = [];
     const four = [1, 2, 3, 4];
     four.map(item => {
+      console.log(item);
       const number = randomInteger(0, 50);
       empty.push(number);
       this.setState({ random: empty });
+      return 'empty';
     });
   }
 
   render() {
-    const fourPokes = this.state.random ? (
+    const { random } = this.state;
+    const fourPokes = random ? (
       <div className="randContainer">
         {
-        this.state.random.map(num => (
-          <img src={`https://pokeres.bastionbot.org/images/pokemon/${num}.png`} alt="" className="random" />
-        ))
-}
+          random.map(num => (
+            <img key={uuidv4()} src={`https://pokeres.bastionbot.org/images/pokemon/${num}.png`} alt="" className="random" />
+          ))
+        }
       </div>
     ) : (<div>Hello</div>);
 

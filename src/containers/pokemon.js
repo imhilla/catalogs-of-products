@@ -3,37 +3,23 @@ import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class Pokemon extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     render: false,
-  //   };
-  //   this.isMounted = false;
-  // }
-
-  // componentDidMount() {
-  // }
-
-  componentWillUnmount() {
-    this.isMounted = false;
-  }
-
   render() {
     const { data } = this.props;
     const ourData = data.products;
     const category = data.filter;
     let myNewData = [];
+    // eslint-disable-next-line array-callback-return
     ourData.map(item => {
+      // eslint-disable-next-line array-callback-return
       item.types.map(type => {
         if (type.type.name === category) {
           myNewData.push(item);
         } else if (category === 'All' || category === 'CATEGORIES') {
           myNewData = ourData;
         }
-        return null;
       });
-      return null;
     });
 
     const PokemonList = ourData.length === 50 ? (
