@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { uuid } from 'uuidv4';
 import Random from './Random';
 import NewProducts from './NewProducts';
+import './pokemonView.css';
 
 class PokemonView extends React.Component {
   constructor(props) {
@@ -77,7 +78,6 @@ class PokemonView extends React.Component {
                         Quantity:
                         {randomInteger(0, 5)}
                       </p>
-                      <i className="fas fa-shopping-cart" />
                       <button type="button">ADD TO CART</button>
                     </div>
                   </div>
