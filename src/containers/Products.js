@@ -64,7 +64,7 @@ const Products = ({ products, category, changeFilter }) => {
 };
 
 Products.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.any),
+  products: PropTypes.instanceOf(Array),
   changeFilter: PropTypes.func,
   category: PropTypes.string,
 };
