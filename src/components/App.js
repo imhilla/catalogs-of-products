@@ -5,21 +5,19 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom";
+  Link,
+} from 'react-router-dom';
 import Products from '../containers/Products';
-import PokemonView from './PokemonView'
+import PokemonView from './PokemonView';
 import '../App.css';
-import Pokemon from '../containers/pokemon';
 
 function App() {
-
   return (
     <Router>
       <div>
         <nav>
           <div className="LowerNav">
-          <Link to="/" className="lii">HOME</Link>
+            <Link to="/" className="lii">HOME</Link>
             <h2>SERVICES</h2>
             <h2>SUPPORT</h2>
             <h2>CONTACT</h2>
@@ -27,8 +25,7 @@ function App() {
           </div>
 
           <ul>
-            <li>
-            </li>
+            <li />
           </ul>
         </nav>
         <Switch>

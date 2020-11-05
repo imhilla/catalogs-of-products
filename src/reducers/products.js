@@ -1,7 +1,7 @@
 const initialState = {
   filter: 'All',
   products: [],
-}
+};
 
 function products(state = initialState, action) {
   switch (action.type) {

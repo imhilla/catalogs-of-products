@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import axios from 'axios';
-import Random from './Random'
-import NewProducts from "./NewProducts";
+import Random from './Random';
+import NewProducts from './NewProducts';
 
 class PokemonView extends React.Component {
   state = {
@@ -10,22 +10,22 @@ class PokemonView extends React.Component {
   }
 
   componentDidMount() {
-    let id = this.props.match.params.pokemon_id
+    const id = this.props.match.params.pokemon_id;
     const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-    let empty = []
-    let four = [1, 2, 3, 4]
+    const empty = [];
+    const four = [1, 2, 3, 4];
     four.map(item => {
-      let number = randomInteger(0, 50)
-      empty.push(number)
-      this.setState({ random: empty })
-    })
+      const number = randomInteger(0, 50);
+      empty.push(number);
+      this.setState({ random: empty });
+    });
 
-    let pokeData = axios(
+    const pokeData = axios(
       'https://pokeapi.co/api/v2/pokemon?limit=50',
-    ).then(res => { this.setState({ data: res.data.results }) });
+    ).then(res => { this.setState({ data: res.data.results }); });
     this.setState({
-      id: id
-    })
+      id,
+    });
   }
 
   render() {
@@ -36,8 +36,9 @@ class PokemonView extends React.Component {
           <img src={`https://pokeres.bastionbot.org/images/pokemon/${this.state.id}.png`} alt="" />
         </div>
 
-      </div>) : (
-        <div>Loading...</div>);
+      </div>
+    ) : (
+      <div>Loading...</div>);
     const Description = this.state.data !== undefined && this.state.random.length !== undefined ? (
       <div>
         {this.state.data.map(item => {
@@ -46,16 +47,25 @@ class PokemonView extends React.Component {
               <div>
                 <div className="description">
                   <h2>{item.name}</h2>
-                  <p>You'll get Pikachu wearing some of Ash's caps from throughout
-                  the animated series, ranging from his classic chapeau from when he first
-                  set out on his Pokémon adventure to more recent designs—like those seen in
-                 the film Pokémon the Movie</p>
+                  <p>
+                    You'll get Pikachu wearing some of Ash's caps from throughout
+                    the animated series, ranging from his classic chapeau from when he first
+                    set out on his Pokémon adventure to more recent designs—like those seen in
+                    the film Pokémon the Movie
+                  </p>
                   <div>
                     <p className="available">Available</p>
-                    <p className="available">$ {randomInteger(10, 30)}.00</p>
+                    <p className="available">
+                      $
+                      {randomInteger(10, 30)}
+                      .00
+                    </p>
                     <div className="quantityContainer">
-                      <p>Quantity: {randomInteger(0, 5)}</p>
-                      <i class="fas fa-shopping-cart"></i>
+                      <p>
+                        Quantity:
+                        {randomInteger(0, 5)}
+                      </p>
+                      <i className="fas fa-shopping-cart" />
                       <button>ADD TO CART</button>
                     </div>
                   </div>
@@ -67,18 +77,17 @@ class PokemonView extends React.Component {
                       Also, please note that Ash's Pikachu cannot evolve. Likewise,
                       Ash's Pikachu cannot be fed Max Soup, which is featured in
                       The Isle of Armor (part one of the Pokémon Sword and Pokémon Shield Expansion Pass).
-                  </p>
+                    </p>
                   </div>
                 </div>
-                <div>
-                </div>
+                <div />
               </div>
-            )
+            );
           }
-        })
-        }
-      </div>) : (
-        <div></div>);
+        })}
+      </div>
+    ) : (
+      <div />);
 
     return (
       <div className="allContainer">
@@ -96,6 +105,6 @@ class PokemonView extends React.Component {
 
     );
   }
-};
+}
 
 export default PokemonView;
