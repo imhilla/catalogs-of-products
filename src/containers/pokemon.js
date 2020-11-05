@@ -10,10 +10,8 @@ class Pokemon extends React.Component {
     const ourData = data.products;
     const category = data.filter;
     let myNewData = [];
-    // eslint-disable-next-line array-callback-return
-    ourData.map(item => {
-      // eslint-disable-next-line array-callback-return
-      item.types.map(type => {
+    ourData.forEach(item => {
+      item.types.forEach(type => {
         if (type.type.name === category) {
           myNewData.push(item);
         } else if (category === 'All' || category === 'CATEGORIES') {
@@ -60,13 +58,14 @@ Pokemon.propTypes = {
     params: PropTypes.shape({
       id: PropTypes.node,
     }).isRequired,
-  }).isRequired,
+  }),
 };
 
 Pokemon.defaultProps = {
   products: {},
   length: 50,
   data: {},
+  match: 2,
 };
 
 export default Pokemon;

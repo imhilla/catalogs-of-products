@@ -1,6 +1,9 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { uuid } from 'uuidv4';
 import Random from './Random';
 import NewProducts from './NewProducts';
 
@@ -18,8 +21,7 @@ class PokemonView extends React.Component {
     const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     const empty = [];
     const four = [1, 2, 3, 4];
-    // eslint-disable-next-line array-callback-return
-    four.map(item => {
+    four.forEach(item => {
       console.log(item);
       const number = randomInteger(0, 50);
       empty.push(number);
@@ -53,7 +55,7 @@ class PokemonView extends React.Component {
         {data.map(item => {
           if (item.url === `https://pokeapi.co/api/v2/pokemon/${id}/`) {
             return (
-              <div>
+              <div key={uuid()}>
                 <div className="description">
                   <h2>{item.name}</h2>
                   <p>
@@ -93,7 +95,6 @@ class PokemonView extends React.Component {
               </div>
             );
           }
-          return 'empty';
         })}
       </div>
     ) : (<div />);

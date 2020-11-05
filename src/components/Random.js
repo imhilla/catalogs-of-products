@@ -11,12 +11,11 @@ class Random extends React.Component {
     const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     const empty = [];
     const four = [1, 2, 3, 4];
-    four.map(item => {
+    four.forEach(item => {
       console.log(item);
       const number = randomInteger(0, 50);
       empty.push(number);
       this.setState({ random: empty });
-      return 'empty';
     });
   }
 
