@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { ReactReduxContext } from 'react-redux'
 import Pokemon from './pokemon';
-import CategoryFilter from './categoryFilter';
+import CategoryFilter from '../components/categoryFilter';
 import { changeFilter } from '../actions/index';
 import { v4 as uuidv4 } from 'uuid';
 

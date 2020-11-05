@@ -7,10 +7,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Products from './Products';
+import Products from '../containers/Products';
 import PokemonView from './PokemonView'
 import '../App.css';
-import Pokemon from './pokemon';
+import Pokemon from '../containers/pokemon';
 
 function App() {
 
