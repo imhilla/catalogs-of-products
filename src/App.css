@@ -122,3 +122,12 @@
   font-weight: bold;
   padding: 0 1em;
 }
+
+.internet {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  cursor: pointer;
+}

@@ -46,7 +46,7 @@ const Pokemon = props => {
         </div>
       ))}
     </div>
-  ) : (<div>No pokemons yet, check your internet</div>);
+  ) : (<div className="internet">No pokemons yet, check your internet</div>);
 
   return (
     <div className="pokelist">

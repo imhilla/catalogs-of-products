@@ -1,4 +1,5 @@
 /* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
 import React from 'react';
 import axios from 'axios';
@@ -8,10 +9,12 @@ import Random from './Random';
 import NewProducts from './NewProducts';
 
 class PokemonView extends React.Component {
-  // eslint-disable-next-line react/state-in-constructor
-  state = {
-    id: null,
-    random: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: null,
+      random: [],
+    };
   }
 
   componentDidMount() {
@@ -21,8 +24,7 @@ class PokemonView extends React.Component {
     const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     const empty = [];
     const four = [1, 2, 3, 4];
-    four.forEach(item => {
-      console.log(item);
+    four.forEach(() => {
       const number = randomInteger(0, 50);
       empty.push(number);
       this.setState({ random: empty });
@@ -34,7 +36,6 @@ class PokemonView extends React.Component {
     this.setState({
       id,
     });
-    console.log(pokeData);
   }
 
   render() {
