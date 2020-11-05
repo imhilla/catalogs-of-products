@@ -1,0 +1,5 @@
+
+.randContainer {
+  display: flex;
+  flex-direction: column;
+}
