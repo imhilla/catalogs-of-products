@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import Products from '../containers/Products';
 import PokemonView from './PokemonView';
-import '../App.css';
+import './App.css';
 
 function App() {
   return (
