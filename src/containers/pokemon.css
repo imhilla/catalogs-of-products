@@ -1,0 +1,27 @@
+.poke-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pokeContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+}
+
+.img-container img {
+  height: auto;
+  width: 200px;
+  border: 1px solid gray;
+}
+
+.internet {
+  display: flex;
+  justify-content: center;
+}
+
+.pokelist {
+  margin: 3em;
+  padding: 3em;
+}

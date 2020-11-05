@@ -1,31 +1,8 @@
-.pokeContainer {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto;
-}
-
-.img-container img {
-  height: auto;
-  width: 200px;
-  border: 1px solid gray;
-}
-
-.pokelist {
-  margin: 3em;
-  padding: 3em;
-}
-
 .item-name {
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
   padding: 1em 0;
-}
-
-.poke-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .random {
@@ -40,10 +17,6 @@
   justify-content: center;
 }
 
-.internet {
-  display: flex;
-  justify-content: center;
-}
 
 img {
   cursor: pointer;
