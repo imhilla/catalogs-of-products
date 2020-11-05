@@ -57,7 +57,7 @@ class Pokemon extends React.Component {
           </div>
         ))}
       </div>) : (
-        <div>No pokemons yet</div>
+        <div>No pokemons yet, check your internet</div>
       )
 
     let renderContainer = false //By default don't render anything

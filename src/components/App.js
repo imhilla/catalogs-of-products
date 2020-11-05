@@ -18,10 +18,16 @@ function App() {
     <Router>
       <div>
         <nav>
-        
+          <div className="LowerNav">
+          <Link to="/" className="lii">HOME</Link>
+            <h2>SERVICES</h2>
+            <h2>SUPPORT</h2>
+            <h2>CONTACT</h2>
+            <h2>CART</h2>
+          </div>
+
           <ul>
             <li>
-              <Link to="/">Products</Link>
             </li>
           </ul>
         </nav>
