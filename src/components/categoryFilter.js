@@ -8,14 +8,12 @@ const renderCategories = categories.map(item => (
 ));
 
 const CategoryFilter = ({ filter = 'All', handleFilterChange }) => (
-  <div className="panel-bg">
-    <div className="second-panel">
-      <div className="categories">
+  <div>
+    <div>
+      <div>
         <select
-          id="inputGroupSelect01"
           value={filter}
           onChange={handleFilterChange}
-          className="CATEGORIES"
         >
           {renderCategories}
         </select>

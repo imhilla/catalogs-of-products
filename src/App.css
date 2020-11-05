@@ -88,30 +88,9 @@
   justify-content: center;
 }
 
-.newArrival {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-}
-
-.newArrival img {
-  width: 190px;
-  height: auto;
-}
-
-.new {
-  font-weight: bold;
-}
-
 .single-img img {
   max-width: 400px;
   max-height: 500px;
-}
-
-
-.LowerNav h2 {
-  font-weight: bold;
-  padding: 0 1em;
 }
 
 .internet {
