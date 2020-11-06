@@ -61,14 +61,5 @@
     "eslint-plugin-react-hooks": "^4.0.0",
     "prettier": "^2.1.2",
     "redux-mock-store": "^1.5.4"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    },
-    "testPathIgnorePatterns": [
-      "<rootDir>/src/__tests__/setup/"
-    ]
   }
 }

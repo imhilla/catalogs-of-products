@@ -11,11 +11,7 @@ it('renders without crushing', () => {
 
 describe('<CategoryFilter />', () => {
   describe('render()', () => {
-    test('renders the component', () => {
-      const wrapper = shallow(<CategoryFilter />);
-      const component = wrapper.dive();
-
-      expect(toJson(component)).toMatchSnapshot();
-    });
+    const component = shallow(<CategoryFilter />);
+    expect(toJson(component)).toMatchSnapshot();
   });
 });
