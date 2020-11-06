@@ -63,9 +63,15 @@
     "redux-mock-store": "^1.5.4"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup/setupEnzyme.js",
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
     "testPathIgnorePatterns": [
-      "<rootDir>/__tests__/setup/"
+      "<rootDir>/src/__tests__/setup/"
     ]
   }
 }
