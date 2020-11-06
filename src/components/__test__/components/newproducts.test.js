@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CategoryFilter from '../categoryFilter';
+import NewProducts from '../../NewProducts';
 
 it('renders without crushing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<CategoryFilter />, div);
+  ReactDOM.render(<NewProducts />, div);
 });
