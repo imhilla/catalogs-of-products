@@ -14,3 +14,20 @@ const mock = new MockAdapter(axios);
 beforeEach(() => {
   store.clearActions();
 });
+
+describe('test actions', () => {
+  beforeEach(() => {
+    store.clearActions();
+  });
+
+  test('Should dispatches the correct action and payload when selecting category filter', () => {
+    const expectedActions = [
+      {
+        payload: 'All',
+        type: 'CHANGE_FILTER',
+      },
+    ];
+    store.dispatch(changeFilter('All'));
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+});
