@@ -57,7 +57,7 @@ class PokemonView extends React.Component {
         {data.map(item => {
           if (item.url === `https://pokeapi.co/api/v2/pokemon/${id}/`) {
             return (
-              <div key={uuid()}>
+              <div key={`${item}view`}>
                 <div className="description">
                   <h2>{item.name}</h2>
                   <p>
@@ -122,8 +122,12 @@ PokemonView.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       pokemon_id: PropTypes.node,
-    }).isRequired,
-  }).isRequired,
+    }),
+  }),
+};
+
+PokemonView.defaultProps = {
+  match: {},
 };
 
 export default PokemonView;
