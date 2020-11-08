@@ -30,27 +30,27 @@ describe('<App />', () => {
 });
 
 describe('test of paths', () => {
-  test('valid path should redirect to products', () => {
-    const wrapper = mount(
-      <MemoryRouter initialEntries={['/random']}>
-        <Provider store={store}>
-          <App />
-        </Provider>
-
-      </MemoryRouter>,
-    );
-    expect(wrapper.find(Products)).toHaveLength(0);
-  });
-
-  // test('valid path should redirect to pokemon id,', () => {
+  // test('valid path should redirect to products', () => {
   //   const wrapper = mount(
-  //     <MemoryRouter initialEntries={['/pokemon/1']}>
+  //     <MemoryRouter initialEntries={['/']}>
   //       <Provider store={store}>
-  //         <PokemonView match={{ params: { ID: 1 } }} />
+  //         <App />
   //       </Provider>
+
   //     </MemoryRouter>,
   //   );
-
-  //   expect(wrapper.find(PokemonView)).toHaveLength(1);
+  //   expect(wrapper.find(Products)).toHaveLength(1);
   // });
+
+  test('valid path should redirect to pokemon id,', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={['/pokemon/1']}>
+        <Provider store={store}>
+          <PokemonView match={{ params: { ID: 1 } }} />
+        </Provider>
+      </MemoryRouter>,
+    );
+
+    expect(wrapper.find(PokemonView)).toHaveLength(1);
+  });
 });

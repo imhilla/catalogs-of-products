@@ -48,8 +48,8 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-node": "^4.1.0",
