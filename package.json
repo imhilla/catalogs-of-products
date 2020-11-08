@@ -15,6 +15,7 @@
     "react-scripts": "4.0.0",
     "react-test-renderer": "^17.0.1",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "use-state-if-mounted": "^1.0.4",
     "uuid": "^8.3.1",
     "uuidv4": "^6.2.4",

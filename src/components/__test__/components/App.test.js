@@ -5,10 +5,9 @@ import { MemoryRouter } from 'react-router';
 import toJson from 'enzyme-to-json';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import App from '../../components/App';
-import Mission from '../../containers/Mission';
-import About from '../../components/About';
-import '../../setupTests';
+// import Products from 'src/containers/Products';
+import App from '../../App';
+// import 'src/setupTests';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -28,28 +27,28 @@ describe('<App />', () => {
   });
 });
 
-describe('test of paths', () => {
-  test('valid path should redirect to about', () => {
-    const wrapper = mount(
-      <MemoryRouter initialEntries={['/about']}>
-        <Provider store={store}>
-          <About />
-        </Provider>
+// describe('test of paths', () => {
+//   test('valid path should redirect to products', () => {
+//     const wrapper = mount(
+//       <MemoryRouter initialEntries={['/']}>
+//         <Provider store={store}>
+//           <Products />
+//         </Provider>
 
-      </MemoryRouter>,
-    );
-    expect(wrapper.find(About)).toHaveLength(1);
-  });
+//       </MemoryRouter>,
+//     );
+//     expect(wrapper.find(Products).toHaveLength(1);
+//   });
 
-  test('valid path should redirect to mission id,', () => {
-    const wrapper = mount(
-      <MemoryRouter initialEntries={['/mission/1']}>
-        <Provider store={store}>
-          <Mission match={{ params: { ID: 1 } }} />
-        </Provider>
-      </MemoryRouter>,
-    );
+//   test('valid path should redirect to mission id,', () => {
+//     const wrapper = mount(
+//       <MemoryRouter initialEntries={['/mission/1']}>
+//         <Provider store={store}>
+//           <Mission match={{ params: { ID: 1 } }} />
+//         </Provider>
+//       </MemoryRouter>,
+//     );
 
-    expect(wrapper.find(Mission)).toHaveLength(1);
-  });
-});
+//     expect(wrapper.find(Mission)).toHaveLength(1);
+//   });
+// });
