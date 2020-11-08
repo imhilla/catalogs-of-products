@@ -6,9 +6,7 @@ import toJson from 'enzyme-to-json';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import App from '../../App';
-import Pokemon from '../../../containers/pokemon';
 import PokemonView from '../../PokemonView';
-import Products from '../../../containers/Products';
 import '../../../setupTests';
 
 const middlewares = [thunk];
@@ -30,18 +28,6 @@ describe('<App />', () => {
 });
 
 describe('test of paths', () => {
-  // test('valid path should redirect to products', () => {
-  //   const wrapper = mount(
-  //     <MemoryRouter initialEntries={['/']}>
-  //       <Provider store={store}>
-  //         <App />
-  //       </Provider>
-
-  //     </MemoryRouter>,
-  //   );
-  //   expect(wrapper.find(Products)).toHaveLength(1);
-  // });
-
   test('valid path should redirect to pokemon id,', () => {
     const wrapper = mount(
       <MemoryRouter initialEntries={['/pokemon/1']}>
