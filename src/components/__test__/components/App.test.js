@@ -5,9 +5,11 @@ import { MemoryRouter } from 'react-router';
 import toJson from 'enzyme-to-json';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-// import Products from 'src/containers/Products';
 import App from '../../App';
-// import 'src/setupTests';
+import Pokemon from '../../../containers/pokemon';
+import PokemonView from '../../PokemonView';
+import Products from '../../../containers/Products';
+import '../../../setupTests';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -27,28 +29,28 @@ describe('<App />', () => {
   });
 });
 
-// describe('test of paths', () => {
-//   test('valid path should redirect to products', () => {
-//     const wrapper = mount(
-//       <MemoryRouter initialEntries={['/']}>
-//         <Provider store={store}>
-//           <Products />
-//         </Provider>
+describe('test of paths', () => {
+  test('valid path should redirect to products', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={['/random']}>
+        <Provider store={store}>
+          <App />
+        </Provider>
 
-//       </MemoryRouter>,
-//     );
-//     expect(wrapper.find(Products).toHaveLength(1);
-//   });
+      </MemoryRouter>,
+    );
+    expect(wrapper.find(Products)).toHaveLength(0);
+  });
 
-//   test('valid path should redirect to mission id,', () => {
-//     const wrapper = mount(
-//       <MemoryRouter initialEntries={['/mission/1']}>
-//         <Provider store={store}>
-//           <Mission match={{ params: { ID: 1 } }} />
-//         </Provider>
-//       </MemoryRouter>,
-//     );
+  // test('valid path should redirect to pokemon id,', () => {
+  //   const wrapper = mount(
+  //     <MemoryRouter initialEntries={['/pokemon/1']}>
+  //       <Provider store={store}>
+  //         <PokemonView match={{ params: { ID: 1 } }} />
+  //       </Provider>
+  //     </MemoryRouter>,
+  //   );
 
-//     expect(wrapper.find(Mission)).toHaveLength(1);
-//   });
-// });
+  //   expect(wrapper.find(PokemonView)).toHaveLength(1);
+  // });
+});
