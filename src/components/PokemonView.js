@@ -67,7 +67,7 @@ class PokemonView extends React.Component {
                     the film Pokémon the Movie
                   </p>
                   <div>
-                    <p className="available">Available</p>
+                    <p className="available" id="available">Available</p>
                     <p className="available">
                       $
                       {randomInteger(10, 30)}
@@ -98,10 +98,10 @@ class PokemonView extends React.Component {
           }
         })}
       </div>
-    ) : (<div />);
+    ) : (<div id="available">Available</div>);
 
     return (
-      <div className="allContainer">
+      <div className="allContainer" id="allcontainer">
         <div className="poke-container">
           {singlePoke}
           <div>

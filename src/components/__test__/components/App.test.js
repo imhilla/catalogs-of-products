@@ -36,7 +36,6 @@ describe('test of paths', () => {
         </Provider>
       </MemoryRouter>,
     );
-
     expect(wrapper.find(PokemonView)).toHaveLength(1);
   });
 });
