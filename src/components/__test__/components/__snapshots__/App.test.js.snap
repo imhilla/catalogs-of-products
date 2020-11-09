@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports['<App /> render() renders the component 1'] = `
+exports[`<App /> render() renders the component 1`] = `
 <Router
   history={
     Object {
@@ -58,6 +58,7 @@ exports['<App /> render() renders the component 1'] = `
             "$$typeof": Symbol(react.memo),
             "WrappedComponent": [Function],
             "compare": null,
+            "displayName": "Connect(Products)",
             "type": [Function],
           }
         }
