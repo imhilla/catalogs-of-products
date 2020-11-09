@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Catalog of products [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/imhilla/catalogs-of-products)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License](https://img.shields.io/badge/License-MIT-green.svg)]()
+![GitHub followers](https://img.shields.io/github/followers/imhilla?label=imhilla&style=social)
+![Twitter URL](https://img.shields.io/twitter/follow/hillarykiptoo_?label=Follow&style=social)
 
-## Available Scripts
+> This is a Microverse React and Redux capstone project
 
-In the project directory, you can run:
+>  catalogs-of-products !
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Catalogs-of-products is a react and redux project that shows pokemons retrieved from the API of pokemon website. Pokemons are retrieved using axios api, stored in the redux store. The user has an option to filter using pokemon type.
+Apart from filter feature, user can click to view single pokemon as a single products. One of the use case scenarios 
+for example involves eccomerce websites when users click to view single product.
+Catalog of products has navigation enabled by react routers. User can click  home and be directed to the home path.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Live version
 
-### `npm test`
+Heres a live <a href="https://catalog-of-products.herokuapp.com/ ">link</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Catalog of products app has the following features
+- Filter feature.
+- Pokemons index page.
+- Pokemons show page.
+- Navigation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Built with
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- HTML
+- Git
+- CSS
+- JavaScript
+- Shields.io
+- Webpack
+- npm
+- command-line tools such as git.
+- React
+- Mars
+- create-react-app-buildpack
+- Redux
 
-### `npm run eject`
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Reach out!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Hillary Kiptoo**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- LinkedIn: [Hillary Kiptoo](https://www.linkedin.com/in/hillarykiptoo)
+- Github: [@imhilla](https://github.com/imhilla)
+- Twitter: [@hillarykiptoo](https://twitter.com/hillarykiptoo_)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing 🤝
 
-## Learn More
+Contributions, issues, and feature requests are welcome!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Thanks to Microverse for its support!
 
-### Code Splitting
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Give a ⭐️ if you like this project!
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
