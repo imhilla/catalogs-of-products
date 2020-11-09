@@ -5,7 +5,6 @@
   "dependencies": {
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
-    "eslint": "^7.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-delay-render": "^0.1.2",
@@ -54,6 +53,7 @@
     "axios-mock-adapter": "^1.19.0",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.1",
+    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-node": "^4.1.0",
     "eslint-plugin-import": "^2.21.2",
