@@ -5,6 +5,7 @@
   "dependencies": {
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-delay-render": "^0.1.2",
