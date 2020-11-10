@@ -57,7 +57,7 @@ const Pokemon = props => {
 };
 
 Pokemon.propTypes = {
-  products: PropTypes.instanceOf(Array),
+  products: PropTypes.objectOf(PropTypes.any),
   data: PropTypes.objectOf(PropTypes.any),
   length: PropTypes.number,
   match: PropTypes.shape({
@@ -68,7 +68,7 @@ Pokemon.propTypes = {
 };
 
 Pokemon.defaultProps = {
-  products: [],
+  products: {},
   length: 50,
   data: {},
   match: {},
