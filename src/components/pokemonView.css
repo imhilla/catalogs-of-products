@@ -1,0 +1,47 @@
+.single-img img {
+  max-width: 400px;
+  max-height: 500px;
+}
+
+.description {
+  max-width: 250px;
+  margin: 0 0 0 0.3em;
+}
+
+.description h2 {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.description p {
+  font-size: 12px;
+}
+
+.available {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: blue;
+  margin-bottom: 0.3em;
+}
+
+.quantityContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantityContainer p {
+  font-size: 13px;
+  border: 1px solid rgb(226, 226, 226);
+  padding: 0.2em 1em;
+  font-weight: bold;
+}
+
+.lastContainer {
+  border: 1px solid rgb(207, 207, 207);
+  margin-top: 1.4em;
+}
+
+.lastContainer p {
+  padding: 0.5em;
+}
