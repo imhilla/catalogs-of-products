@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> render() renders the component 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div>
+    <nav>
+      <div
+        className="LowerNav"
+      >
+        <Link
+          className="lii"
+          to="/"
+        >
+          HOME
+        </Link>
+        <h2>
+          SERVICES
+        </h2>
+        <h2>
+          SUPPORT
+        </h2>
+        <h2>
+          CONTACT
+        </h2>
+        <h2>
+          CART
+        </h2>
+      </div>
+      <ul>
+        <li />
+      </ul>
+    </nav>
+    <Switch>
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(Products)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/pokemon/:pokemon_id"
+      />
+    </Switch>
+  </div>
+</Router>
+`;

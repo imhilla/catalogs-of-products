@@ -1,0 +1,22 @@
+.item-name {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1em 0;
+}
+
+.random {
+  height: 100px;
+  width: 100px;
+  border: 1px solid rgb(194, 194, 194);
+  margin: 0.3em;
+}
+
+.newContainer {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  cursor: pointer;
+}
