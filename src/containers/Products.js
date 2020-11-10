@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-
 import { v4 as uuidv4 } from 'uuid';
 import Pokemon from './pokemon';
 import CategoryFilter from '../components/categoryFilter';
@@ -64,13 +63,11 @@ const Products = ({ products, category, changeFilter }) => {
 };
 
 Products.propTypes = {
-  products: PropTypes.instanceOf(Array),
   changeFilter: PropTypes.func,
   category: PropTypes.string,
 };
 
 Products.defaultProps = {
-  products: [],
   changeFilter: () => { },
   category: 'All',
 };
